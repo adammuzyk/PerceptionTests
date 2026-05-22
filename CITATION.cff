@@ -7,7 +7,7 @@ license: MIT
 authors:
   - family-names: "Rosiński"
     given-names: "Adam"
-    affiliation: "The Feliks Nowowiejski Academy of Music in Bydgoszcz"
+    affiliation: "The University of Warmia and Mazury in Olsztyn"
 abstract: "Windows WPF application for auditory perception experiments with deterministic PCM stimulus synthesis and structured JSON result export."
 keywords:
   - auditory scene analysis
