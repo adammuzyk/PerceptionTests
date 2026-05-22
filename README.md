@@ -35,7 +35,9 @@ The software generates auditory stimuli programmatically at runtime rather than 
 |   |-- DATA_ANALYSIS.md
 |   |-- DEPENDENCIES.md
 |   |-- OUTPUT_SCHEMA.md
-|   `-- RESEARCHER_CONFIG_GUIDE.md
+|   |-- RESEARCHER_CONFIG_GUIDE.md
+|   |-- UI_SCREENSHOTS.md
+|   `-- ui_screenshots_named/
 |-- src/
 |   |-- README.md
 |   |-- PerceptionTests.sln
@@ -108,6 +110,10 @@ The output schema and an example result file are documented in:
 - [`docs/OUTPUT_SCHEMA.md`](docs/OUTPUT_SCHEMA.md)
 - [`docs/examples/sample-result.json`](docs/examples/sample-result.json)
 
+Current application screens are documented in:
+
+- [`docs/UI_SCREENSHOTS.md`](docs/UI_SCREENSHOTS.md)
+
 ## Documentation
 
 - [`docs/RESEARCHER_CONFIG_GUIDE.md`](docs/RESEARCHER_CONFIG_GUIDE.md) - how to edit experiment and questionnaire configuration safely
@@ -115,6 +121,7 @@ The output schema and an example result file are documented in:
 - [`docs/CHECKPOINTS.md`](docs/CHECKPOINTS.md) - checkpoint and final-save behavior
 - [`docs/DATA_ANALYSIS.md`](docs/DATA_ANALYSIS.md) - notes for downstream analysis
 - [`docs/DEPENDENCIES.md`](docs/DEPENDENCIES.md) - dependency and runtime notes
+- [`docs/UI_SCREENSHOTS.md`](docs/UI_SCREENSHOTS.md) - current user-interface screenshots and screen naming
 
 ## Citation And License
 
