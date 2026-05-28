@@ -10,7 +10,7 @@ url: "https://github.com/adammuzyk/PerceptionTests/releases/tag/v1.0.1"
 authors:
   - family-names: "Rosiński"
     given-names: "Adam"
-    affiliation: "The University of Warmia and Mazury in Olsztyn"
+    affiliation: "Faculty of Arts, University of Warmia and Mazury in Olsztyn"
 abstract: "PerceptionTests is a Windows desktop application written in C#/WPF for psychoacoustic research in Auditory Scene Analysis. It supports behavioural estimation of auditory stream-segregation thresholds through deterministic synthesis of pure-tone stimuli as 44.1 kHz mono PCM waveforms. The software integrates JSON-defined experimental sessions, configurable tone-duration scheduling, stimulus-aligned response logging, checkpoint persistence, dynamic questionnaire rendering, and structured participant-data capture. Experiment and questionnaire configurations are researcher-editable and validated at startup. Results, questionnaire data, configuration snapshots, and metadata are exported as machine-readable JSON files. By combining explicit waveform synthesis, documented configuration, structured export, and automated tests, PerceptionTests supports reproducible studies of auditory stream formation across participant groups."
 keywords:
   - auditory scene analysis
