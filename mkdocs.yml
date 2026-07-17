@@ -1,0 +1,43 @@
+site_name: PerceptionTests Documentation
+site_description: Researcher and developer documentation for PerceptionTests
+site_url: https://adammuzyk.github.io/PerceptionTests/
+repo_url: https://github.com/adammuzyk/PerceptionTests
+repo_name: adammuzyk/PerceptionTests
+edit_uri: edit/publish/docs/
+docs_dir: docs
+site_dir: site
+strict: true
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting started:
+      - Quick start: QUICK_START.md
+      - Installation: INSTALLATION.md
+      - Troubleshooting: TROUBLESHOOTING.md
+  - Research use:
+      - Calibration: CALIBRATION.md
+      - Researcher configuration: RESEARCHER_CONFIG_GUIDE.md
+      - Output schema: OUTPUT_SCHEMA.md
+      - Checkpoints: CHECKPOINTS.md
+      - Data analysis: DATA_ANALYSIS.md
+  - Reference:
+      - Dependencies and source build: DEPENDENCIES.md
+      - Interface screenshots: UI_SCREENSHOTS.md

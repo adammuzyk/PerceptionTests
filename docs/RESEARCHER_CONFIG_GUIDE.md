@@ -2,8 +2,10 @@
 
 This guide explains how to edit the released configuration files safely:
 
-- [`experiment-config.json`](../src/PerceptionTests/experiment-config.json)
-- [`questionnaire-config.json`](../src/PerceptionTests/questionnaire-config.json)
+- [`experiment-config.json`](https://github.com/adammuzyk/PerceptionTests/blob/publish/src/PerceptionTests/experiment-config.json)
+- [`questionnaire-config.json`](https://github.com/adammuzyk/PerceptionTests/blob/publish/src/PerceptionTests/questionnaire-config.json)
+
+Full GitHub URLs are used because the configuration source files are outside the MkDocs `docs/` directory.
 
 These files are intended for controlled researcher-facing adjustments to the released application. Treat any substantive change as part of the study protocol and document it accordingly.
 
@@ -14,6 +16,7 @@ These files are intended for controlled researcher-facing adjustments to the rel
 3. Confirm that the application starts without configuration errors.
 4. Run a short validation session before collecting participant data.
 5. Keep a dated copy of the configuration used for data collection.
+6. Complete the playback-chain checks described in [Calibration](CALIBRATION.md).
 
 ## `experiment-config.json`
 
@@ -26,7 +29,7 @@ The following changes may be appropriate when intentionally revising the release
 - updating `frequenciesHz`,
 - adjusting `startToneDurationMilliseconds` and `endToneDurationMilliseconds`,
 - adjusting `nominalSampleDurationMilliseconds`,
-- revising `lowFrequencyGainBelowHz` and `lowFrequencyGainMultiplier` when low-frequency compensation is part of the protocol,
+- revising `lowFrequencyGainBelowHz` and `lowFrequencyGainMultiplier` only when the digital gain rule is an intentional part of the protocol,
 - changing `requiredValidResponses` when the study design requires a different number of valid responses.
 
 ### Fields To Treat With Extra Caution
@@ -36,7 +39,7 @@ The following values are part of the released structure and should not be change
 - `sessionId`
 - `durationMapping`
 - the overall session set across `experiment1`, `experiment2`, and `experiment3`
-- `attackReleaseMilliseconds`, unless you have confirmed that the released application behavior matches the intended protocol change
+- `attackReleaseMilliseconds`, unless the released application behaviour has been verified for the intended protocol change
 
 ### Validation Rules Enforced By The Released Application
 
@@ -48,13 +51,13 @@ The current application validates the following conditions:
 - `startToneDurationMilliseconds` must be greater than or equal to `endToneDurationMilliseconds`,
 - `requiredValidResponses` must be greater than `0`,
 - `attackReleaseMilliseconds` cannot be negative,
-- `durationMapping` must be one of the supported mapping values: `"linear"`, `"logarithmic"`, `"hyperbolic"`, `"sqrt"`, `"root3"`, or `"arctan"`.
+- `durationMapping` must be one of the values supported by the released application.
 
-The distributed protocol currently uses `"hyperbolic"` for all sessions. Changing `durationMapping` changes how elapsed sample time is converted into generated tone duration and should be treated as a protocol change.
+Changing `durationMapping` changes how elapsed sample time is converted into generated tone duration and should be treated as a protocol change.
 
 ### Research Guidance
 
-If you modify any experiment value, treat that modification as a protocol change. Record it in study notes, version control, or release notes, and retain the edited JSON together with the collected data.
+If you modify any experiment value, treat that modification as a protocol change. Record it in study notes, version control, or release notes, and retain the edited JSON together with the collected data. Digital amplitude multipliers do not replace calibration; see [Calibration](CALIBRATION.md).
 
 ## `questionnaire-config.json`
 
@@ -114,4 +117,5 @@ Before using a changed configuration in participant testing, confirm all of the 
 2. the application starts without a configuration error,
 3. the correct questionnaire branch renders as expected,
 4. a short validation run produces a valid result file,
-5. the configuration used for data collection has been archived.
+5. the configuration used for data collection has been archived,
+6. the playback device, level settings, and calibration record have been documented.

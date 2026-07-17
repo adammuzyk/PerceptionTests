@@ -1,0 +1,57 @@
+name: release-windows
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
+
+      - name: Resolve package version
+        id: version
+        shell: pwsh
+        run: |
+          $version = "manual"
+          if ("${{ github.ref_type }}" -eq "tag") {
+            $version = "${{ github.ref_name }}".TrimStart("v")
+          } else {
+            [xml]$project = Get-Content .\src\PerceptionTests\PerceptionTests.csproj
+            $version = $project.Project.PropertyGroup.Version | Select-Object -First 1
+          }
+          "version=$version" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+
+      - name: Publish standard and single-file Windows packages
+        shell: pwsh
+        run: .\scripts\publish-win-x64.ps1 -Version "${{ steps.version.outputs.version }}"
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: PerceptionTests-${{ steps.version.outputs.version }}-win-x64-packages
+          path: |
+            artifacts/release/*.zip
+            artifacts/release/*.sha256
+
+      - name: Attach files to GitHub Release
+        if: github.ref_type == 'tag'
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: |
+            artifacts/release/*.zip
+            artifacts/release/*.sha256

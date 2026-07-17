@@ -162,12 +162,16 @@ AppPackages/
 # Others
 .obsidian/
 .vscode/
-scripts/
+scripts-tmp/
+scripts/output/
+scripts/tmp/
+artifacts/
+site/
+.venv-docs/
 sql/
 *.Cache
 ClientBin/
 [Ss]tyle[Cc]op.*
-scripts/archives/
 ~$*
 *~
 *.dbmdl
