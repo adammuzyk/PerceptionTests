@@ -1,5 +1,7 @@
 # Quick Start
 
+[View the complete PerceptionTests documentation online.](https://adammuzyk.github.io/PerceptionTests/)
+
 ## 1. Download the release
 
 Open the repository's [**Releases** page](https://github.com/adammuzyk/PerceptionTests/releases) and download:

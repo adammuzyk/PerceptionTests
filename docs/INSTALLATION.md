@@ -1,5 +1,7 @@
 # Installation
 
+[View the complete PerceptionTests documentation online.](https://adammuzyk.github.io/PerceptionTests/)
+
 ## Recommended path: precompiled Windows release
 
 This path is intended for researchers and participants who do not use Visual Studio or the .NET SDK.

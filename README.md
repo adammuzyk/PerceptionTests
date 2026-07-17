@@ -2,7 +2,14 @@
 
 `PerceptionTests` is a Windows desktop application for auditory perception experiments. It presents a participant questionnaire, runs generated sound-based listening sessions, records the participant's response point, and saves structured results as JSON.
 
-## Download and run — no development tools required
+<p align="center"><strong><a href="https://adammuzyk.github.io/PerceptionTests/">Web documentation</a></strong></p>
+
+<p align="center">
+  <a href="https://github.com/adammuzyk/PerceptionTests/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/adammuzyk/PerceptionTests"></a>
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-green"></a>
+</p>
+
+## Download and run
 
 A precompiled Windows release is the most suitable option for researchers who do not need to modify the source code.
 
@@ -14,7 +21,6 @@ A precompiled Windows release is the most suitable option for researchers who do
 
 A self-contained release includes the required .NET runtime. End users do not need Visual Studio or the .NET SDK.
 
-- [Web documentation](https://adammuzyk.github.io/PerceptionTests/)
 - [Quick start](docs/QUICK_START.md)
 - [Installation](docs/INSTALLATION.md)
 - [Calibration](docs/CALIBRATION.md)
@@ -47,7 +53,7 @@ A self-contained release includes the required .NET runtime. End users do not ne
 - [Dependencies and source build](docs/DEPENDENCIES.md)
 - [User-interface screenshots](docs/UI_SCREENSHOTS.md)
 
-## Build from source — developers only
+## Build from source
 
 The repository pins SDK `9.0.102` in [`global.json`](global.json). The application target framework is `net8.0-windows`.
 
